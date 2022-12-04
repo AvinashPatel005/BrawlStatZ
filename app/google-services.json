@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "313402504138",
+    "project_id": "brawlstatz",
+    "storage_bucket": "brawlstatz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313402504138:android:c2b0cdb0106c8ede211533",
+        "android_client_info": {
+          "package_name": "com.kal.brawlstatz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "313402504138-mngrlmga15aus1qomb8qn53juuvl4q02.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBulIUKG2I6K2VgshYv4hBdwAa99D2AzJg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "313402504138-mngrlmga15aus1qomb8qn53juuvl4q02.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

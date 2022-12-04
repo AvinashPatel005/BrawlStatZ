@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/search"
+        android:title="Search"
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="always" />
+
+    <item android:title="Refresh"
+        android:id="@+id/refresh"/>
+
+    <item android:title="Sort By" >
+        <menu app:showAsAction="always" >
+            <item
+                android:id="@+id/sort_name"
+                android:icon="@android:drawable/ic_menu_sort_alphabetically"
+                android:title="Name"
+                app:actionViewClass="com.google.android.material.button.MaterialButtonToggleGroup" />
+            <item
+                android:id="@+id/sort_rarity"
+                android:icon="@android:drawable/ic_menu_sort_by_size"
+                android:title="Rarity"
+                app:actionViewClass="com.google.android.material.button.MaterialButtonToggleGroup" />
+        </menu>
+    </item>
+
+    <item android:title="Filter" >
+        <menu app:showAsAction="always" >
+            <item
+                android:id="@+id/sort_Reset"
+                android:title="Reset" />
+            <item
+                android:id="@+id/sort_Legendary"
+                android:title="Legendary" />
+            <item
+                android:id="@+id/sort_Chromatic"
+                android:title="Chromatic" />
+            <item
+                android:id="@+id/sort_Mythic"
+                android:title="Mythic" />
+            <item
+                android:id="@+id/sort_Epic"
+                android:title="Epic" />
+            <item
+                android:id="@+id/sort_Super"
+                android:title="Super Rare" />
+            <item
+                android:id="@+id/sort_Rare"
+                android:title="Rare" />
+            <item
+                android:id="@+id/sort_Trophie"
+                android:title="Trophie Road" />
+        </menu>
+    </item>
+
+
+</menu>
