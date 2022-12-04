@@ -28,7 +28,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/viewpager"
         app:tabIndicatorGravity="bottom"
-        app:tabSelectedTextColor="@color/purple_500"
+        app:tabSelectedTextColor="#7021DF"
         app:tabTextColor="#FFFFFF">
 
         <com.google.android.material.tabs.TabItem
