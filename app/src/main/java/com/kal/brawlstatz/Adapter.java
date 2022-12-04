@@ -77,7 +77,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
 
        if(blist.bpro!=null){
-           Picasso.get().load(blist.bpro.toString()).placeholder(R.drawable.thumb1).networkPolicy(NetworkPolicy.OFFLINE).into(holder.bpro, new Callback() {
+           Picasso.get().load(blist.bpro.toString()).placeholder(R.drawable.placeholder1).networkPolicy(NetworkPolicy.OFFLINE).into(holder.bpro, new Callback() {
                @Override
                public void onSuccess() {
 
@@ -85,12 +85,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
                @Override
                public void onError(Exception e) {
-                   Picasso.get().load(blist.bpro.toString()).placeholder(R.drawable.thumb1).into(holder.bpro);
+                   Picasso.get().load(blist.bpro.toString()).placeholder(R.drawable.placeholder1).into(holder.bpro);
                }
            });
        }
        else{
-           Picasso.get().load(R.drawable.thumb1).placeholder(R.drawable.thumb1).into(holder.bpro);
+           Picasso.get().load(R.drawable.placeholder1).placeholder(R.drawable.placeholder1).into(holder.bpro);
        }
        if (blist.bmodel!=null){
            Picasso.get().load(blist.bmodel.toString()).networkPolicy(NetworkPolicy.OFFLINE).into(holder.bmodel, new Callback() {
@@ -109,7 +109,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
            Picasso.get().load(R.drawable.round_rectangle).into(holder.bmodel);
        }
         if (blist.c1!=null) {
-            Picasso.get().load(blist.c1.toString()).placeholder(R.drawable.thumb2).networkPolicy(NetworkPolicy.OFFLINE).into(holder.c1, new Callback() {
+            Picasso.get().load(blist.c1.toString()).placeholder(R.drawable.placeholder2).networkPolicy(NetworkPolicy.OFFLINE).into(holder.c1, new Callback() {
                 @Override
                 public void onSuccess() {
 
@@ -119,15 +119,15 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
                 public void onError(Exception e) {
 
 
-                    Picasso.get().load(blist.c1.toString()).placeholder(R.drawable.thumb2).into(holder.c1);
+                    Picasso.get().load(blist.c1.toString()).placeholder(R.drawable.placeholder2).into(holder.c1);
                 }
             });
         }
         else{
-            Picasso.get().load(R.drawable.thumb2).placeholder(R.drawable.thumb2).into(holder.c1);
+            Picasso.get().load(R.drawable.placeholder2).placeholder(R.drawable.placeholder2).into(holder.c1);
         }
         if (blist.c2!=null) {
-            Picasso.get().load(blist.c2.toString()).placeholder(R.drawable.thumb4).networkPolicy(NetworkPolicy.OFFLINE).into(holder.c2, new Callback() {
+            Picasso.get().load(blist.c2.toString()).placeholder(R.drawable.placeholder4).networkPolicy(NetworkPolicy.OFFLINE).into(holder.c2, new Callback() {
                 @Override
                 public void onSuccess() {
 
@@ -135,15 +135,15 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
                 @Override
                 public void onError(Exception e) {
-                    Picasso.get().load(blist.c2.toString()).placeholder(R.drawable.thumb4).into(holder.c2);
+                    Picasso.get().load(blist.c2.toString()).placeholder(R.drawable.placeholder4).into(holder.c2);
                 }
             });
         }
         else{
-            Picasso.get().load(R.drawable.thumb4).placeholder(R.drawable.thumb4).into(holder.c2);
+            Picasso.get().load(R.drawable.placeholder4).placeholder(R.drawable.placeholder4).into(holder.c2);
         }
         if (blist.c3!=null) {
-            Picasso.get().load(blist.c3.toString()).placeholder(R.drawable.thumb3).networkPolicy(NetworkPolicy.OFFLINE).into(holder.c3, new Callback() {
+            Picasso.get().load(blist.c3.toString()).placeholder(R.drawable.placeholder3).networkPolicy(NetworkPolicy.OFFLINE).into(holder.c3, new Callback() {
                 @Override
                 public void onSuccess() {
 
@@ -151,12 +151,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
                 @Override
                 public void onError(Exception e) {
-                    Picasso.get().load(blist.c3.toString()).placeholder(R.drawable.thumb3).into(holder.c3);
+                    Picasso.get().load(blist.c3.toString()).placeholder(R.drawable.placeholder3).into(holder.c3);
                 }
             });
         }
         else{
-            Picasso.get().load(R.drawable.thumb3).placeholder(R.drawable.thumb3).into(holder.c3);
+            Picasso.get().load(R.drawable.placeholder3).placeholder(R.drawable.placeholder3).into(holder.c3);
         }
 
 

@@ -14,7 +14,6 @@ public class vpAdapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         switch (position){
-            case 0:return new BrawlerFragment();
             case 1:return new MetaFragment();
             case 2:return new mapFragment();
             default:return new BrawlerFragment();

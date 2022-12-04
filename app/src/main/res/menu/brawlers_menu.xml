@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/search"
-        android:icon="@drawable/search"
         android:title="Search"
         app:actionViewClass="android.widget.SearchView"
         app:showAsAction="always" />
 
-    <item android:title="Refresh"
-        android:id="@+id/refresh"/>
+    <item
+        android:id="@+id/refresh"
+        android:title="Refresh" />
 
-    <item android:title="Sort By" >
-        <menu app:showAsAction="always" >
+    <item android:title="Sort By">
+        <menu app:showAsAction="always">
             <item
                 android:id="@+id/sort_name"
                 android:icon="@android:drawable/ic_menu_sort_alphabetically"
@@ -27,8 +27,8 @@
         </menu>
     </item>
 
-    <item android:title="Filter" >
-        <menu app:showAsAction="always" >
+    <item android:title="Filter">
+        <menu app:showAsAction="always">
             <item
                 android:id="@+id/sort_Reset"
                 android:title="Reset" />

@@ -350,7 +350,7 @@
                         android:clickable="true"
                         app:layout_constraintStart_toEndOf="@+id/s1"
                         app:layout_constraintTop_toBottomOf="@+id/babout"
-                        app:srcCompat="@drawable/tstar" />
+                        app:srcCompat="@drawable/template_starpower" />
 
                     <ImageView
                         android:id="@+id/s1"
@@ -361,7 +361,7 @@
                         android:clickable="true"
                         app:layout_constraintStart_toEndOf="@+id/g2"
                         app:layout_constraintTop_toBottomOf="@+id/babout"
-                        app:srcCompat="@drawable/tstar" />
+                        app:srcCompat="@drawable/template_starpower" />
 
                     <ImageView
                         android:id="@+id/g2"
@@ -372,7 +372,7 @@
                         android:clickable="true"
                         app:layout_constraintStart_toEndOf="@+id/g1"
                         app:layout_constraintTop_toBottomOf="@+id/babout"
-                        app:srcCompat="@drawable/tg" />
+                        app:srcCompat="@drawable/template_gadget" />
 
                     <ImageView
                         android:id="@+id/g1"
@@ -383,7 +383,7 @@
                         android:clickable="true"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/babout"
-                        app:srcCompat="@drawable/tg" />
+                        app:srcCompat="@drawable/template_gadget" />
 
                     <TextView
                         android:id="@+id/helper"
