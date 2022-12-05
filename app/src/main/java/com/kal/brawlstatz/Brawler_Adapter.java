@@ -120,6 +120,7 @@ public class Brawler_Adapter extends RecyclerView.Adapter<Brawler_Adapter.ViewHo
                 Picasso.get().load(temp_List.g2).into(holder.g2);
             }
         });
+
         Picasso.get().load(temp_List.s1).networkPolicy(NetworkPolicy.OFFLINE).into(holder.s1, new Callback() {
             @Override
             public void onSuccess() {}
@@ -221,7 +222,6 @@ public class Brawler_Adapter extends RecyclerView.Adapter<Brawler_Adapter.ViewHo
             notifyItemChanged(previousExpandedPosition);
             notifyItemChanged(position);
         });
-
     }
 
     @Override
@@ -241,7 +241,6 @@ public class Brawler_Adapter extends RecyclerView.Adapter<Brawler_Adapter.ViewHo
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
             //All details
             bpro = itemView.findViewById(R.id.bpro);
             bname = itemView.findViewById(R.id.bname);
@@ -259,10 +258,8 @@ public class Brawler_Adapter extends RecyclerView.Adapter<Brawler_Adapter.ViewHo
             s1 = itemView.findViewById(R.id.s1);
             s2 = itemView.findViewById(R.id.s2);
             helper = itemView.findViewById(R.id.helper);
-
             //stroke color
             cardView = itemView.findViewById(R.id.cardView);
-
             //hide functionality
             hidden = itemView.findViewById(R.id.hidden);
             downA = itemView.findViewById(R.id.downA);

@@ -30,7 +30,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:logo="@drawable/logo_menu"
         app:logoScaleType="center"
-        app:title="  Brawl Statz"
+        app:title="@string/toolbar_appTitle"
         app:titleTextColor="#FFFFFF" />
 
     <com.facebook.shimmer.ShimmerFrameLayout
@@ -52,21 +52,13 @@
             android:orientation="vertical">
 
             <include layout="@layout/shimmer_placeholder" />
-
             <include layout="@layout/shimmer_placeholder" />
-
             <include layout="@layout/shimmer_placeholder" />
-
             <include layout="@layout/shimmer_placeholder" />
-
             <include layout="@layout/shimmer_placeholder" />
-
             <include layout="@layout/shimmer_placeholder" />
-
             <include layout="@layout/shimmer_placeholder" />
-
             <include layout="@layout/shimmer_placeholder" />
-
 
         </LinearLayout>
 

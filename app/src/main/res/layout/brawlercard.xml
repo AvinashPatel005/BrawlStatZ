@@ -12,7 +12,8 @@
     android:clickable="true"
     app:cardBackgroundColor="#FFEB3B"
     app:cardCornerRadius="10dp"
-    app:strokeColor="#FFEB3B">
+    app:strokeColor="#FFEB3B"
+    android:focusable="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -45,7 +46,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
-                        android:text="TextView"
+                        android:text=""
                         android:textColor="#FFFFFF"
                         android:textSize="18dp"
                         android:textStyle="bold"
@@ -84,7 +85,6 @@
                                 android:id="@+id/bpro"
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
-
                                 android:background="@color/white"
                                 android:scaleType="centerCrop"
                                 app:srcCompat="@color/chromatic" />
@@ -122,7 +122,6 @@
                                 android:id="@+id/c2"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-
                                 android:background="@color/white"
                                 android:scaleType="centerCrop"
                                 app:srcCompat="@color/chromatic" />
@@ -198,7 +197,6 @@
                                 android:id="@+id/c3"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-
                                 android:background="@color/white"
                                 android:scaleType="centerCrop"
                                 app:srcCompat="@color/chromatic" />
@@ -216,7 +214,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="2dp"
                         android:fontFamily="serif"
-                        android:text="TextView"
+                        android:text=""
                         android:textSize="10sp"
                         android:textStyle="bold|italic"
                         app:layout_constraintStart_toEndOf="@+id/bpro_card"
@@ -234,7 +232,7 @@
                         android:id="@+id/c2n"
                         android:layout_width="44dp"
                         android:layout_height="wrap_content"
-                        android:text="DYNAMIKE"
+                        android:text=""
                         android:textAlignment="center"
                         android:textColor="#DFD4D4"
                         android:textSize="9sp"
@@ -249,7 +247,7 @@
                         android:layout_width="44dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="12dp"
-                        android:text="DYNAMIKE"
+                        android:text=""
                         android:textAlignment="center"
                         android:textColor="#DFD4D4"
                         android:textSize="9sp"
@@ -263,7 +261,7 @@
                         android:id="@+id/c1n"
                         android:layout_width="44dp"
                         android:layout_height="wrap_content"
-                        android:text="DYNAMIKE"
+                        android:text=""
                         android:textAlignment="center"
                         android:textColor="#DFD4D4"
                         android:textSize="9sp"
@@ -279,7 +277,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
                         android:layout_marginEnd="57dp"
-                        android:text="COUNTERS"
+                        android:text="@string/counters"
                         android:textColor="#CFC3C3"
                         android:textSize="8sp"
                         android:textStyle="bold"
@@ -317,7 +315,7 @@
                         android:layout_width="72dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="22dp"
-                        android:text="ABOUT"
+                        android:text="@string/about"
                         android:textAlignment="center"
                         android:textColor="#DCDCDC"
                         android:textSize="10sp"
@@ -333,7 +331,7 @@
                         android:layout_marginTop="14dp"
                         android:background="@drawable/round_rectangle"
                         android:padding="2dp"
-                        android:text="He's a Protector with a penchant for parties. Surge attacks foes with energy drink blasts that split in 2 on contact. His Super upgrades his stats in 3 stages and comes complete with totally awesome body mods!"
+                        android:text=""
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
                         android:textSize="10sp"
@@ -350,7 +348,8 @@
                         android:clickable="true"
                         app:layout_constraintStart_toEndOf="@+id/s1"
                         app:layout_constraintTop_toBottomOf="@+id/babout"
-                        app:srcCompat="@drawable/template_starpower" />
+                        app:srcCompat="@drawable/template_starpower"
+                        android:focusable="true" />
 
                     <ImageView
                         android:id="@+id/s1"
@@ -361,7 +360,8 @@
                         android:clickable="true"
                         app:layout_constraintStart_toEndOf="@+id/g2"
                         app:layout_constraintTop_toBottomOf="@+id/babout"
-                        app:srcCompat="@drawable/template_starpower" />
+                        app:srcCompat="@drawable/template_starpower"
+                        android:focusable="true" />
 
                     <ImageView
                         android:id="@+id/g2"
@@ -372,7 +372,8 @@
                         android:clickable="true"
                         app:layout_constraintStart_toEndOf="@+id/g1"
                         app:layout_constraintTop_toBottomOf="@+id/babout"
-                        app:srcCompat="@drawable/template_gadget" />
+                        app:srcCompat="@drawable/template_gadget"
+                        android:focusable="true" />
 
                     <ImageView
                         android:id="@+id/g1"
@@ -383,7 +384,8 @@
                         android:clickable="true"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/babout"
-                        app:srcCompat="@drawable/template_gadget" />
+                        app:srcCompat="@drawable/template_gadget"
+                        android:focusable="true" />
 
                     <TextView
                         android:id="@+id/helper"
@@ -395,7 +397,8 @@
                         android:textSize="10sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/g1" />
+                        app:layout_constraintTop_toBottomOf="@+id/g1"
+                         />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
