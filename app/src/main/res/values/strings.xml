@@ -1,5 +1,24 @@
 <resources>
     <string name="app_name">Brawl StatZ</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="meta">META</string>
+    <string name="maps">MAPS</string>
+    <string name="brawlers">Brawlers</string>
+    <string name="about">ABOUT</string>
+    <string name="counters">COUNTERS</string>
+    <string name="toolbar_appTitle">Brawl Statz</string>
+    <string name="search">Search</string>
+    <string name="refresh">Refresh</string>
+    <string name="sort_by">Sort By</string>
+    <string name="name">Name</string>
+    <string name="rarity">Rarity</string>
+    <string name="filter">Filter</string>
+    <string name="reset">Reset</string>
+    <string name="legendary">Legendary</string>
+    <string name="chromatic">Chromatic</string>
+    <string name="mythic">Mythic</string>
+    <string name="epic">Epic</string>
+    <string name="super_rare">Super Rare</string>
+    <string name="rare">Rare</string>
+    <string name="trophie_road">Trophie Road</string>
 </resources>

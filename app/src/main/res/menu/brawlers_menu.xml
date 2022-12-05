@@ -4,55 +4,55 @@
 
     <item
         android:id="@+id/search"
-        android:title="Search"
+        android:title="@string/search"
         app:actionViewClass="android.widget.SearchView"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/refresh"
-        android:title="Refresh" />
+        android:title="@string/refresh" />
 
-    <item android:title="Sort By">
+    <item android:title="@string/sort_by">
         <menu app:showAsAction="always">
             <item
                 android:id="@+id/sort_name"
                 android:icon="@android:drawable/ic_menu_sort_alphabetically"
-                android:title="Name"
+                android:title="@string/name"
                 app:actionViewClass="com.google.android.material.button.MaterialButtonToggleGroup" />
             <item
                 android:id="@+id/sort_rarity"
                 android:icon="@android:drawable/ic_menu_sort_by_size"
-                android:title="Rarity"
+                android:title="@string/rarity"
                 app:actionViewClass="com.google.android.material.button.MaterialButtonToggleGroup" />
         </menu>
     </item>
 
-    <item android:title="Filter">
+    <item android:title="@string/filter">
         <menu app:showAsAction="always">
             <item
                 android:id="@+id/sort_Reset"
-                android:title="Reset" />
+                android:title="@string/reset" />
             <item
                 android:id="@+id/sort_Legendary"
-                android:title="Legendary" />
+                android:title="@string/legendary" />
             <item
                 android:id="@+id/sort_Chromatic"
-                android:title="Chromatic" />
+                android:title="@string/chromatic" />
             <item
                 android:id="@+id/sort_Mythic"
-                android:title="Mythic" />
+                android:title="@string/mythic" />
             <item
                 android:id="@+id/sort_Epic"
-                android:title="Epic" />
+                android:title="@string/epic" />
             <item
                 android:id="@+id/sort_Super"
-                android:title="Super Rare" />
+                android:title="@string/super_rare" />
             <item
                 android:id="@+id/sort_Rare"
-                android:title="Rare" />
+                android:title="@string/rare" />
             <item
                 android:id="@+id/sort_Trophie"
-                android:title="Trophie Road" />
+                android:title="@string/trophie_road" />
         </menu>
     </item>
 

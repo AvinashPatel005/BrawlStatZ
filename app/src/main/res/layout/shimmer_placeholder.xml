@@ -11,7 +11,8 @@
     android:padding="1dp"
     app:cardBackgroundColor="#9C27B0"
     app:cardCornerRadius="10dp"
-    app:strokeColor="#FFEB3B">
+    app:strokeColor="#FFEB3B"
+    android:focusable="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
