@@ -57,7 +57,6 @@ public class BrawlerFragment extends Fragment {
 
         materialToolbar =view.findViewById(R.id.materialToolbar);
         ((AppCompatActivity)getActivity()).setSupportActionBar(materialToolbar);
-
         shimmerFrameLayout = view.findViewById(R.id.shimmer);
         
         loadDatabase();
