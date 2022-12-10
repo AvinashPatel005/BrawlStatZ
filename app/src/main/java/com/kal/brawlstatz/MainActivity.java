@@ -1,5 +1,5 @@
 package com.kal.brawlstatz;
-
+//BETA
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;
 import androidx.viewpager2.widget.ViewPager2;
