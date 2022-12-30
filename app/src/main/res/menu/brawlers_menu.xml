@@ -52,7 +52,7 @@
                 android:title="@string/rare" />
             <item
                 android:id="@+id/sort_Trophie"
-                android:title="@string/trophie_road" />
+                android:title="@string/starting_brawler" />
         </menu>
     </item>
 

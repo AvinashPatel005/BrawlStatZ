@@ -173,7 +173,7 @@ public class BrawlerFragment extends Fragment {
             case R.id.sort_Trophie:
                 list.clear();
                 for (int i = 0; i < back_up.size(); i++) {
-                    if (back_up.get(i).brare.equals("TROPHIE ROAD")) {
+                    if (back_up.get(i).brare.equals("STARTING BRAWLER")) {
                         list.add(back_up.get(i));
                     }
                 }
@@ -247,7 +247,7 @@ public class BrawlerFragment extends Fragment {
         if (isRarityDecrease) {
             list.clear();
             for (int i = 0; i < back_up.size(); i++) {
-                if (back_up.get(i).brare.equals("TROPHIE ROAD")) {
+                if (back_up.get(i).brare.equals("STARTING BRAWLER")) {
                     list.add(back_up.get(i));
                 }
             }
@@ -317,7 +317,7 @@ public class BrawlerFragment extends Fragment {
                 }
             }
             for (int i = 0; i < back_up.size(); i++) {
-                if (back_up.get(i).brare.equals("TROPHIE ROAD")) {
+                if (back_up.get(i).brare.equals("STARTING BRAWLER")) {
                     list.add(back_up.get(i));
                 }
             }
