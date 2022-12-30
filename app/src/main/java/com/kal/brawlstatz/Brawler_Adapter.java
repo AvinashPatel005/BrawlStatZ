@@ -151,7 +151,7 @@ public class Brawler_Adapter extends RecyclerView.Adapter<Brawler_Adapter.ViewHo
                 holder.cardView.setCardBackgroundColor(Color.parseColor("#2cde18"));
                 holder.brare.setTextColor(Color.parseColor("#2cde18"));
                 break;
-            case "TROPHIE ROAD":
+            case "STARTING BRAWLER":
                 holder.cardView.setCardBackgroundColor(Color.parseColor("#8accfb"));
                 holder.brare.setTextColor(Color.parseColor("#8accfb"));
                 break;

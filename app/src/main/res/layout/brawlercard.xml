@@ -288,7 +288,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/hidden"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="240dp"
                     android:visibility="gone"
                     tools:visibility="gone">
 
@@ -346,10 +346,10 @@
                         android:layout_marginStart="2dp"
                         android:layout_marginTop="20dp"
                         android:clickable="true"
+                        android:focusable="true"
                         app:layout_constraintStart_toEndOf="@+id/s1"
                         app:layout_constraintTop_toBottomOf="@+id/babout"
-                        app:srcCompat="@drawable/template_starpower"
-                        android:focusable="true" />
+                        app:srcCompat="@drawable/template_starpower" />
 
                     <ImageView
                         android:id="@+id/s1"
@@ -358,10 +358,10 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="20dp"
                         android:clickable="true"
+                        android:focusable="true"
                         app:layout_constraintStart_toEndOf="@+id/g2"
                         app:layout_constraintTop_toBottomOf="@+id/babout"
-                        app:srcCompat="@drawable/template_starpower"
-                        android:focusable="true" />
+                        app:srcCompat="@drawable/template_starpower" />
 
                     <ImageView
                         android:id="@+id/g2"
@@ -370,10 +370,10 @@
                         android:layout_marginStart="2dp"
                         android:layout_marginTop="20dp"
                         android:clickable="true"
+                        android:focusable="true"
                         app:layout_constraintStart_toEndOf="@+id/g1"
                         app:layout_constraintTop_toBottomOf="@+id/babout"
-                        app:srcCompat="@drawable/template_gadget"
-                        android:focusable="true" />
+                        app:srcCompat="@drawable/template_gadget" />
 
                     <ImageView
                         android:id="@+id/g1"
@@ -382,10 +382,10 @@
                         android:layout_marginStart="4dp"
                         android:layout_marginTop="20dp"
                         android:clickable="true"
+                        android:focusable="true"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/babout"
-                        app:srcCompat="@drawable/template_gadget"
-                        android:focusable="true" />
+                        app:srcCompat="@drawable/template_gadget" />
 
                     <TextView
                         android:id="@+id/helper"
@@ -397,8 +397,7 @@
                         android:textSize="10sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/g1"
-                         />
+                        app:layout_constraintTop_toBottomOf="@+id/g1" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
