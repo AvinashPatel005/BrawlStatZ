@@ -15,8 +15,10 @@
         android:paddingTop="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbar"
@@ -30,7 +32,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:logo="@drawable/logo_menu"
         app:logoScaleType="center"
-        app:title="@string/toolbar_appTitle"
+        app:title=" Brawl Statz"
         app:titleTextColor="#FFFFFF" />
 
     <com.facebook.shimmer.ShimmerFrameLayout

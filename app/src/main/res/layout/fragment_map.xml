@@ -7,6 +7,7 @@
     tools:context=".mapFragment">
 
     <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar2"
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:background="#022C65"
@@ -14,28 +15,21 @@
         android:theme="?android:attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:logo="@drawable/logo_menu"
+        app:logoScaleType="center"
+        app:title=" MAPS"
+        app:titleTextColor="#FFFFFF" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
-        android:text="Me Too....🤣"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mapRecycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="96dp"
+        android:background="#021835"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="240dp"
-        android:text="😢"
-        android:textSize="96sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
