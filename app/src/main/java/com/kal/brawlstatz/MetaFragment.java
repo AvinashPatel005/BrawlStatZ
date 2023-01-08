@@ -57,6 +57,8 @@ public class MetaFragment extends Fragment {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
 
                     MetaModelClass meta = ds.getValue(MetaModelClass.class);
+                    meta.bpro = "https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+meta.bname.toLowerCase()+"%2F"+String.valueOf(ds.getKey())+".webp?alt=media";
+
                     metalist.add(meta);
 
                 }

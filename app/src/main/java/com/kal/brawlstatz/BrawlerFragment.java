@@ -1,6 +1,11 @@
 package com.kal.brawlstatz;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -22,7 +27,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -30,7 +35,7 @@ public class BrawlerFragment extends Fragment {
 
     ArrayList<BrawlerModelClass> list = new ArrayList<>();
     ArrayList<BrawlerModelClass> back_up = new ArrayList<>();
-    
+
     private Brawler_Adapter brawlerAdapter;
     private RecyclerView recyclerView;
 
@@ -38,7 +43,7 @@ public class BrawlerFragment extends Fragment {
     ShimmerFrameLayout shimmerFrameLayout;
 
     boolean isRarityDecrease = true;
-    
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         setHasOptionsMenu(true); // Enables toolbar in fragment
@@ -50,7 +55,7 @@ public class BrawlerFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_brawler, container, false);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
-        
+
         recyclerView = view.findViewById(R.id.recyclerView2);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(layoutManager);
@@ -58,9 +63,9 @@ public class BrawlerFragment extends Fragment {
         materialToolbar =view.findViewById(R.id.materialToolbar);
         ((AppCompatActivity)getActivity()).setSupportActionBar(materialToolbar);
         shimmerFrameLayout = view.findViewById(R.id.shimmer);
-        
+
         loadDatabase();
-        
+
         return view;
     }
 
@@ -197,7 +202,7 @@ public class BrawlerFragment extends Fragment {
                 break;
 
             case R.id.refresh:
-                loadDatabase();
+                deleteDirectoryTree(getActivity().getCacheDir());
                 Toast.makeText(getContext(), "Database Refreshed", Toast.LENGTH_SHORT).show();
                 break;
         }
@@ -212,6 +217,16 @@ public class BrawlerFragment extends Fragment {
                 list.clear();
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     BrawlerModelClass brawler = ds.getValue(BrawlerModelClass.class);
+
+                    brawler.bpro = "https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+brawler.bname.toLowerCase()+"%2F"+String.valueOf(ds.getKey())+".webp?alt=media";
+                    brawler.bmodel ="https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+brawler.bname.toLowerCase()+"%2F"+String.valueOf(ds.getKey())+"_Skin-Default.webp?alt=media";
+                    brawler.g1 ="https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+brawler.bname.toLowerCase()+"%2FGD-"+String.valueOf(ds.getKey())+"1.webp?alt=media";
+                    brawler.g2 ="https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+brawler.bname.toLowerCase()+"%2FGD-"+String.valueOf(ds.getKey())+"2.webp?alt=media";
+                    brawler.s1 ="https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+brawler.bname.toLowerCase()+"%2FSP-"+String.valueOf(ds.getKey())+"1.webp?alt=media";
+                    brawler.s2 ="https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+brawler.bname.toLowerCase()+"%2FSP-"+String.valueOf(ds.getKey())+"2.webp?alt=media";
+                    brawler.c1 = "https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+brawler.c1n.toLowerCase()+"%2F"+String.valueOf(brawler.c1n.charAt(0)+brawler.c1n.substring(1).toLowerCase())+".webp?alt=media";
+                    brawler.c2 = "https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+brawler.c2n.toLowerCase()+"%2F"+String.valueOf(brawler.c2n.charAt(0)+brawler.c2n.substring(1).toLowerCase())+".webp?alt=media";
+                    brawler.c3 = "https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+brawler.c3n.toLowerCase()+"%2F"+String.valueOf(brawler.c3n.charAt(0)+brawler.c3n.substring(1).toLowerCase())+".webp?alt=media";
                     list.add(brawler);
 
                 }
@@ -219,6 +234,7 @@ public class BrawlerFragment extends Fragment {
                 back_up = new ArrayList(list);
 
                 recyclerView.setAdapter(brawlerAdapter);
+
                 shimmerFrameLayout.stopShimmer();
                 shimmerFrameLayout.setVisibility(View.GONE);
             }
@@ -229,6 +245,23 @@ public class BrawlerFragment extends Fragment {
             }
         });
     }
+
+    public void deleteDirectoryTree(File fileOrDirectory) {
+        if (fileOrDirectory.isDirectory()) {
+            for (File child : fileOrDirectory.listFiles()) {
+                deleteDirectoryTree(child);
+            }
+        }
+        fileOrDirectory.delete();
+
+        Context ctx = getActivity();
+        PackageManager pm = ctx.getPackageManager();
+        Intent intent = pm.getLaunchIntentForPackage(ctx.getPackageName());
+        Intent mainIntent = Intent.makeRestartActivityTask(intent.getComponent());
+        ctx.startActivity(mainIntent);
+        Runtime.getRuntime().exit(0);
+    }
+
 
     private void sortName() {
         if (list.equals(back_up)) {
