@@ -6,12 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="8dp"
-    android:layout_marginTop="2dp"
+    android:layout_marginTop="1dp"
     android:layout_marginRight="8dp"
-    android:layout_marginBottom="2dp"
-    app:cardBackgroundColor="#022C65"
+    android:layout_marginBottom="1dp"
+    app:cardBackgroundColor="#23242E"
     app:cardCornerRadius="10dp"
-    app:strokeColor="#FF5722"
+    app:strokeColor="#000000"
     app:strokeWidth="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout

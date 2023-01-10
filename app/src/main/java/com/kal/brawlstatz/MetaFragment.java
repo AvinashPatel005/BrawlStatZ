@@ -14,6 +14,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.database.DataSnapshot;
@@ -28,6 +29,7 @@ public class MetaFragment extends Fragment {
     private Meta_Adapter metaAdapter;
     private RecyclerView metaRecycler;
 
+    ShimmerFrameLayout shimmerFlm;
     MaterialToolbar tool;
 
     @Override
@@ -49,6 +51,8 @@ public class MetaFragment extends Fragment {
         tool =view.findViewById(R.id.materialToolbar3);
         ((AppCompatActivity)getActivity()).setSupportActionBar(tool);
 
+        shimmerFlm = view.findViewById(R.id.mshimmer);
+
         FirebaseDatabase.getInstance().getReference().child("brawlers").orderByChild("tier").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -66,6 +70,8 @@ public class MetaFragment extends Fragment {
 
 
                 metaRecycler.setAdapter(metaAdapter);
+                shimmerFlm.stopShimmer();
+                shimmerFlm.setVisibility(View.GONE);
             }
 
             @Override
@@ -75,6 +81,19 @@ public class MetaFragment extends Fragment {
         });
         return view;
     }
+
+    @Override
+    public void onResume() {
+        shimmerFlm.startShimmer();
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        shimmerFlm.stopShimmer();
+        super.onPause();
+    }
+
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {

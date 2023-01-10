@@ -30,9 +30,47 @@
         android:layout_height="0dp"
         android:layout_marginTop="96dp"
         android:background="#021835"
+        android:paddingTop="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/materialToolbar3" />
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/mshimmer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="98dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/shimmer_placeholder_meta" />
+
+            <include layout="@layout/shimmer_placeholder_meta" />
+
+            <include layout="@layout/shimmer_placeholder_meta" />
+
+            <include layout="@layout/shimmer_placeholder_meta" />
+
+            <include layout="@layout/shimmer_placeholder_meta" />
+
+            <include layout="@layout/shimmer_placeholder_meta" />
+
+            <include layout="@layout/shimmer_placeholder_meta" />
+
+            <include layout="@layout/shimmer_placeholder_meta" />
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

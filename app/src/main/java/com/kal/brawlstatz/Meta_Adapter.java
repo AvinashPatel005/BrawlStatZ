@@ -82,25 +82,25 @@ public class Meta_Adapter extends RecyclerView.Adapter<Meta_Adapter.ViewHolder> 
 
         switch (holder.tier.getText().toString()){
             case "S":holder.tier.setTextColor(Color.parseColor("#ff7e7e"));
-                holder.card.setStrokeColor(Color.parseColor("#ff7e7e"));
+                //holder.card.setStrokeColor(Color.parseColor("#ff7e7e"));
                 break;
             case "A":holder.tier.setTextColor(Color.parseColor("#ffbf7f"));
-                holder.card.setStrokeColor(Color.parseColor("#ffbf7f"));
+               // holder.card.setStrokeColor(Color.parseColor("#ffbf7f"));
                 break;
             case "B":holder.tier.setTextColor(Color.parseColor("#ffde7f"));
-                holder.card.setStrokeColor(Color.parseColor("#ffde7f"));
+              //  holder.card.setStrokeColor(Color.parseColor("#ffde7f"));
                 break;
             case "C":holder.tier.setTextColor(Color.parseColor("#feff7f"));
-                holder.card.setStrokeColor(Color.parseColor("#feff7f"));
+              //  holder.card.setStrokeColor(Color.parseColor("#feff7f"));
                 break;
             case "D":holder.tier.setTextColor(Color.parseColor("#beff7d"));
-                holder.card.setStrokeColor(Color.parseColor("#beff7d"));
+              //  holder.card.setStrokeColor(Color.parseColor("#beff7d"));
                 break;
             case "F":holder.tier.setTextColor(Color.parseColor("#7eff80"));
-                holder.card.setStrokeColor(Color.parseColor("#7eff80"));
+               // holder.card.setStrokeColor(Color.parseColor("#7eff80"));
                 break;
             default: holder.tier.setTextColor(Color.parseColor("#000000"));
-                holder.card.setStrokeColor(Color.parseColor("#000000"));
+              //  holder.card.setStrokeColor(Color.parseColor("#000000"));
         }
         holder.rank.setText(String.valueOf(position+1));
     }

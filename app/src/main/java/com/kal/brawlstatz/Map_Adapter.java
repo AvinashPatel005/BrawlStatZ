@@ -1,6 +1,7 @@
 package com.kal.brawlstatz;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,8 +10,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.card.MaterialCardView;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
@@ -63,27 +66,37 @@ public class Map_Adapter extends RecyclerView.Adapter<Map_Adapter.ViewHolder> {
         switch (temp_mList.mtype) {
             case "KNOCKOUT":
                 Picasso.get().load(R.drawable.knockout).into(holder.mode_icon);
+                holder.typecol.setCardBackgroundColor(Color.parseColor("#f6831c"));
                 break;
             case "GEM GRAB":
                 Picasso.get().load(R.drawable.gemgrab).into(holder.mode_icon);
+                holder.typecol.setCardBackgroundColor(Color.parseColor("#9b3df3"));
                 break;
             case "HEIST":
                 Picasso.get().load(R.drawable.heist).into(holder.mode_icon);
+                holder.typecol.setCardBackgroundColor(Color.parseColor("#d55cd3"));
                 break;
             case "BRAWL BALL":
                 Picasso.get().load(R.drawable.brawlball).into(holder.mode_icon);
+                holder.typecol.setCardBackgroundColor(Color.parseColor("#8c9fdf"));
                 break;
             case "HOT ZONE":
                 Picasso.get().load(R.drawable.hotzone).into(holder.mode_icon);
+                holder.typecol.setCardBackgroundColor(Color.parseColor("#e33c50"));
+                break;
+            case "BOUNTY":
+                Picasso.get().load(R.drawable.bounty).into(holder.mode_icon);
+                holder.typecol.setCardBackgroundColor(Color.parseColor("#01cfff"));
                 break;
             default:
                 Picasso.get().load(R.drawable.bounty).into(holder.mode_icon);
-                break;
+                holder.typecol.setCardBackgroundColor(Color.parseColor("#000000"));
         }
 
         final boolean isExpanded = position == mExpandedPosition;
         if (isExpanded) {
             holder.mhide.setVisibility(View.VISIBLE);
+
 
         } else {
             holder.mhide.setVisibility(View.GONE);
@@ -110,6 +123,7 @@ public class Map_Adapter extends RecyclerView.Adapter<Map_Adapter.ViewHolder> {
         ConstraintLayout mhide;
         ImageView thumb , layout , mode_icon;
         TextView name , type;
+        MaterialCardView typecol;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             thumb = itemView.findViewById(R.id.mthumb);
@@ -117,7 +131,7 @@ public class Map_Adapter extends RecyclerView.Adapter<Map_Adapter.ViewHolder> {
             mode_icon = itemView.findViewById(R.id.modeIco);
             name = itemView.findViewById(R.id.mname);
             type = itemView.findViewById(R.id.mtype);
-
+            typecol = itemView.findViewById(R.id.typecol);
             mhide = itemView.findViewById(R.id.mhide);
 
 

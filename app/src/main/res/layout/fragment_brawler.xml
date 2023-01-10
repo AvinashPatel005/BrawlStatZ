@@ -10,7 +10,7 @@
         android:id="@+id/recyclerView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="98dp"
         android:background="#021835"
         android:paddingTop="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -54,12 +54,19 @@
             android:orientation="vertical">
 
             <include layout="@layout/shimmer_placeholder" />
+
             <include layout="@layout/shimmer_placeholder" />
+
             <include layout="@layout/shimmer_placeholder" />
+
             <include layout="@layout/shimmer_placeholder" />
+
             <include layout="@layout/shimmer_placeholder" />
+
             <include layout="@layout/shimmer_placeholder" />
+
             <include layout="@layout/shimmer_placeholder" />
+
             <include layout="@layout/shimmer_placeholder" />
 
         </LinearLayout>

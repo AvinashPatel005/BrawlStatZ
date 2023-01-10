@@ -2,6 +2,9 @@ package com.kal.brawlstatz;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +20,7 @@ import com.squareup.picasso.Callback;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Brawler_Adapter extends RecyclerView.Adapter<Brawler_Adapter.ViewHolder> {
@@ -42,6 +46,45 @@ public class Brawler_Adapter extends RecyclerView.Adapter<Brawler_Adapter.ViewHo
     public void onBindViewHolder(@NonNull Brawler_Adapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
         final BrawlerModelClass temp_List = list.get(position);
+
+
+
+
+
+
+
+
+        holder.bmodel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2Fchester%2Fsfx%2FChester_die_vo_01.ogg?alt=media&token=7bbfc3ca-0abe-494c-a3d3-d13bbc202f68"; // your URL here
+                MediaPlayer mediaPlayer = new MediaPlayer();
+                mediaPlayer.setAudioAttributes(
+                        new AudioAttributes.Builder()
+                                .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                                .setUsage(AudioAttributes.USAGE_MEDIA)
+                                .build()
+                );
+                try {
+                    mediaPlayer.setDataSource(url);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    mediaPlayer.prepare(); // might take long! (for buffering, etc)
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                mediaPlayer.start();
+            }
+        });
+
+
+
+
+
+
+
 
         holder.bname.setText(temp_List.bname);
         holder.brare.setText(temp_List.brare);

@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="8dp"
-    android:layout_marginTop="2dp"
+    android:layout_marginTop="1dp"
     android:layout_marginRight="8dp"
-    android:layout_marginBottom="2dp"
+    android:layout_marginBottom="1dp"
     app:cardBackgroundColor="#022C65"
     app:cardCornerRadius="10dp"
     app:strokeColor="#000000"
@@ -31,7 +31,7 @@
                 app:cardElevation="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/materialCardView"
+                app:layout_constraintTop_toBottomOf="@+id/typecol"
                 app:strokeColor="#000000">
 
                 <ImageView
@@ -50,29 +50,16 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/materialCardView"
+                android:id="@+id/typecol"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 app:cardBackgroundColor="#000000"
                 app:cardElevation="0dp"
                 app:cardMaxElevation="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:strokeColor="#000000">
-
-                <ImageView
-                    android:id="@+id/typeCol"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:scaleType="centerCrop"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@color/knockout" />
-
-
-            </com.google.android.material.card.MaterialCardView>
+                app:strokeColor="#000000" />
 
             <ImageView
                 android:id="@+id/modeIco"
@@ -126,7 +113,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/mhide"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            tools:visibility="gone">
 
             <ImageView
                 android:id="@+id/mlayout"
