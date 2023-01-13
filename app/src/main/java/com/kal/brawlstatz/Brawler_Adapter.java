@@ -47,45 +47,6 @@ public class Brawler_Adapter extends RecyclerView.Adapter<Brawler_Adapter.ViewHo
 
         final BrawlerModelClass temp_List = list.get(position);
 
-
-
-
-
-
-
-
-        holder.bmodel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String url = "https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2Fchester%2Fsfx%2FChester_die_vo_01.ogg?alt=media&token=7bbfc3ca-0abe-494c-a3d3-d13bbc202f68"; // your URL here
-                MediaPlayer mediaPlayer = new MediaPlayer();
-                mediaPlayer.setAudioAttributes(
-                        new AudioAttributes.Builder()
-                                .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
-                                .setUsage(AudioAttributes.USAGE_MEDIA)
-                                .build()
-                );
-                try {
-                    mediaPlayer.setDataSource(url);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    mediaPlayer.prepare(); // might take long! (for buffering, etc)
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                mediaPlayer.start();
-            }
-        });
-
-
-
-
-
-
-
-
         holder.bname.setText(temp_List.bname);
         holder.brare.setText(temp_List.brare);
         holder.babout.setText(temp_List.babout);
