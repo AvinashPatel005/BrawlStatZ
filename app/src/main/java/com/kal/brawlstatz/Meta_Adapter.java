@@ -55,7 +55,7 @@ public class Meta_Adapter extends RecyclerView.Adapter<Meta_Adapter.ViewHolder> 
             case "RARE":
                 holder.mrare.setTextColor(Color.parseColor("#2cde18"));
                 break;
-            case "STARTING BRAWLER":
+            case "STARTING":
                 holder.mrare.setTextColor(Color.parseColor("#8accfb"));
                 break;
             case "CHROMATIC":

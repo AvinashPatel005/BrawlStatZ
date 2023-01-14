@@ -23,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class MetaFragment extends Fragment {
     ArrayList<MetaModelClass> metalist = new ArrayList<>();
@@ -49,7 +50,7 @@ public class MetaFragment extends Fragment {
         metaRecycler.setLayoutManager(layoutManager);
 
         tool =view.findViewById(R.id.materialToolbar3);
-        ((AppCompatActivity)getActivity()).setSupportActionBar(tool);
+        ((AppCompatActivity) requireActivity()).setSupportActionBar(tool);
 
         shimmerFlm = view.findViewById(R.id.mshimmer);
 

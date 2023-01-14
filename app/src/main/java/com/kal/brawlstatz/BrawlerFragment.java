@@ -1,11 +1,10 @@
 package com.kal.brawlstatz;
 
-import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -30,9 +29,10 @@ import com.google.firebase.database.ValueEventListener;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Objects;
 
+@SuppressLint({"NotifyDataSetChanged", "NonConstantResourceId"})
 public class BrawlerFragment extends Fragment {
-
     ArrayList<BrawlerModelClass> list = new ArrayList<>();
     ArrayList<BrawlerModelClass> back_up = new ArrayList<>();
 
@@ -55,13 +55,13 @@ public class BrawlerFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_brawler, container, false);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
-
         recyclerView = view.findViewById(R.id.recyclerView2);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(layoutManager);
 
         materialToolbar =view.findViewById(R.id.materialToolbar);
-        ((AppCompatActivity)getActivity()).setSupportActionBar(materialToolbar);
+        ((AppCompatActivity) requireActivity()).setSupportActionBar(materialToolbar);
+
         shimmerFrameLayout = view.findViewById(R.id.shimmer);
 
         loadDatabase();
@@ -178,7 +178,7 @@ public class BrawlerFragment extends Fragment {
             case R.id.sort_Trophie:
                 list.clear();
                 for (int i = 0; i < back_up.size(); i++) {
-                    if (back_up.get(i).brare.equals("STARTING BRAWLER")) {
+                    if (back_up.get(i).brare.equals("STARTING")) {
                         list.add(back_up.get(i));
                     }
                 }
@@ -202,7 +202,7 @@ public class BrawlerFragment extends Fragment {
                 break;
 
             case R.id.refresh:
-                deleteDirectoryTree(getActivity().getCacheDir());
+                deleteDirectoryTree(requireActivity().getCacheDir());
                 Toast.makeText(getContext(), "Database Refreshed", Toast.LENGTH_SHORT).show();
                 break;
         }
@@ -217,21 +217,20 @@ public class BrawlerFragment extends Fragment {
                 list.clear();
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     BrawlerModelClass brawler = ds.getValue(BrawlerModelClass.class);
-
-                    brawler.bpro = "https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+brawler.bname.toLowerCase()+"%2F"+String.valueOf(ds.getKey())+".webp?alt=media";
-                    brawler.bmodel ="https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+brawler.bname.toLowerCase()+"%2F"+String.valueOf(ds.getKey())+"_Skin-Default.webp?alt=media";
-                    brawler.g1 ="https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+brawler.bname.toLowerCase()+"%2FGD-"+String.valueOf(ds.getKey())+"1.webp?alt=media";
-                    brawler.g2 ="https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+brawler.bname.toLowerCase()+"%2FGD-"+String.valueOf(ds.getKey())+"2.webp?alt=media";
-                    brawler.s1 ="https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+brawler.bname.toLowerCase()+"%2FSP-"+String.valueOf(ds.getKey())+"1.webp?alt=media";
-                    brawler.s2 ="https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+brawler.bname.toLowerCase()+"%2FSP-"+String.valueOf(ds.getKey())+"2.webp?alt=media";
-                    brawler.c1 = "https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+brawler.c1n.toLowerCase()+"%2F"+String.valueOf(brawler.c1n.charAt(0)+brawler.c1n.substring(1).toLowerCase())+".webp?alt=media";
-                    brawler.c2 = "https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+brawler.c2n.toLowerCase()+"%2F"+String.valueOf(brawler.c2n.charAt(0)+brawler.c2n.substring(1).toLowerCase())+".webp?alt=media";
-                    brawler.c3 = "https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+brawler.c3n.toLowerCase()+"%2F"+String.valueOf(brawler.c3n.charAt(0)+brawler.c3n.substring(1).toLowerCase())+".webp?alt=media";
+                    assert brawler != null;
+                    brawler.bpro = "https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+brawler.bname.toLowerCase()+"%2F"+ ds.getKey() +".webp?alt=media";
+                    brawler.bmodel ="https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+brawler.bname.toLowerCase()+"%2F"+ ds.getKey() +"_Skin-Default.webp?alt=media";
+                    brawler.g1 ="https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+brawler.bname.toLowerCase()+"%2FGD-"+ ds.getKey() +"1.webp?alt=media";
+                    brawler.g2 ="https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+brawler.bname.toLowerCase()+"%2FGD-"+ ds.getKey() +"2.webp?alt=media";
+                    brawler.s1 ="https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+brawler.bname.toLowerCase()+"%2FSP-"+ ds.getKey() +"1.webp?alt=media";
+                    brawler.s2 ="https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+brawler.bname.toLowerCase()+"%2FSP-"+ ds.getKey() +"2.webp?alt=media";
+                    if(brawler.c1n!=null) brawler.c1 = "https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F" + brawler.c1n.toLowerCase() + "%2F" + brawler.c1n.charAt(0) + brawler.c1n.substring(1).toLowerCase() + ".webp?alt=media";
+                    if(brawler.c2n!=null) brawler.c2 = "https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F" + brawler.c2n.toLowerCase() + "%2F" + brawler.c2n.charAt(0) + brawler.c2n.substring(1).toLowerCase() + ".webp?alt=media";
+                    if(brawler.c3n!=null) brawler.c3 = "https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F" + brawler.c3n.toLowerCase() + "%2F" + brawler.c3n.charAt(0) + brawler.c3n.substring(1).toLowerCase() + ".webp?alt=media";
                     list.add(brawler);
-
                 }
                 brawlerAdapter = new Brawler_Adapter(list);
-                back_up = new ArrayList(list);
+                back_up = new ArrayList<>(list);
 
                 recyclerView.setAdapter(brawlerAdapter);
 
@@ -241,27 +240,27 @@ public class BrawlerFragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
     }
 
     public void deleteDirectoryTree(File fileOrDirectory) {
         if (fileOrDirectory.isDirectory()) {
-            for (File child : fileOrDirectory.listFiles()) {
+            for (File child : Objects.requireNonNull(fileOrDirectory.listFiles())) {
                 deleteDirectoryTree(child);
             }
         }
-        fileOrDirectory.delete();
-
+        if(fileOrDirectory.delete()){
+            Toast.makeText(getContext(), "Cache Cleared", Toast.LENGTH_SHORT).show();
+        }
         Context ctx = getActivity();
+        assert ctx != null;
         PackageManager pm = ctx.getPackageManager();
         Intent intent = pm.getLaunchIntentForPackage(ctx.getPackageName());
         Intent mainIntent = Intent.makeRestartActivityTask(intent.getComponent());
         ctx.startActivity(mainIntent);
         Runtime.getRuntime().exit(0);
     }
-
 
     private void sortName() {
         if (list.equals(back_up)) {
@@ -280,7 +279,7 @@ public class BrawlerFragment extends Fragment {
         if (isRarityDecrease) {
             list.clear();
             for (int i = 0; i < back_up.size(); i++) {
-                if (back_up.get(i).brare.equals("STARTING BRAWLER")) {
+                if (back_up.get(i).brare.equals("STARTING")) {
                     list.add(back_up.get(i));
                 }
             }
@@ -350,7 +349,7 @@ public class BrawlerFragment extends Fragment {
                 }
             }
             for (int i = 0; i < back_up.size(); i++) {
-                if (back_up.get(i).brare.equals("STARTING BRAWLER")) {
+                if (back_up.get(i).brare.equals("STARTING")) {
                     list.add(back_up.get(i));
                 }
             }
@@ -358,5 +357,4 @@ public class BrawlerFragment extends Fragment {
             isRarityDecrease = true;
         }
     }
-
 }

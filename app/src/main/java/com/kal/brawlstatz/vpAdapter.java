@@ -9,7 +9,6 @@ public class vpAdapter extends FragmentStateAdapter {
     public vpAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }
-
     @NonNull
     @Override
     public Fragment createFragment(int position) {
@@ -19,7 +18,6 @@ public class vpAdapter extends FragmentStateAdapter {
             default:return new BrawlerFragment();
         }
     }
-
     @Override
     public int getItemCount() {
         return 3;

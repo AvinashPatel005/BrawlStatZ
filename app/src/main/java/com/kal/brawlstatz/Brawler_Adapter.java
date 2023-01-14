@@ -2,25 +2,18 @@ package com.kal.brawlstatz;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
-import android.media.AudioAttributes;
-import android.media.AudioManager;
-import android.media.MediaPlayer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.google.android.material.card.MaterialCardView;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
-
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class Brawler_Adapter extends RecyclerView.Adapter<Brawler_Adapter.ViewHolder> {
@@ -155,7 +148,7 @@ public class Brawler_Adapter extends RecyclerView.Adapter<Brawler_Adapter.ViewHo
                 holder.cardView.setCardBackgroundColor(Color.parseColor("#2cde18"));
                 holder.brare.setTextColor(Color.parseColor("#2cde18"));
                 break;
-            case "STARTING BRAWLER":
+            case "STARTING":
                 holder.cardView.setCardBackgroundColor(Color.parseColor("#8accfb"));
                 holder.brare.setTextColor(Color.parseColor("#8accfb"));
                 break;

@@ -8,10 +8,6 @@
         app:actionViewClass="android.widget.SearchView"
         app:showAsAction="ifRoom" />
 
-    <item
-        android:id="@+id/refresh"
-        android:title="@string/refresh" />
-
     <item android:title="@string/sort_by">
         <menu app:showAsAction="always">
             <item
@@ -52,9 +48,14 @@
                 android:title="@string/rare" />
             <item
                 android:id="@+id/sort_Trophie"
-                android:title="@string/starting_brawler" />
+                android:title="@string/starting" />
         </menu>
+
     </item>
+
+    <item
+        android:id="@+id/refresh"
+        android:title="@string/recache" />
 
 
 </menu>

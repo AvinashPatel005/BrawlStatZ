@@ -20,5 +20,6 @@
     <string name="epic">Epic</string>
     <string name="super_rare">Super Rare</string>
     <string name="rare">Rare</string>
-    <string name="starting_brawler">Starting Brawler</string>
+    <string name="starting">Starting</string>
+    <string name="recache">ReCache</string>
 </resources>

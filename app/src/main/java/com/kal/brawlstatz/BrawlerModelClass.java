@@ -1,9 +1,10 @@
 package com.kal.brawlstatz;
 
+import org.jetbrains.annotations.Contract;
+
 //model class for custom ArrayList.
 public class BrawlerModelClass {
-    String bname,brare,bpro,babout,bmodel,c1,c1n,c2,c2n,c3,c3n,g1,g1t,g2,g2t,s1,s1t,s2,s2t;
-
+     String bname,brare,bpro,babout,bmodel,c1,c1n,c2,c2n,c3,c3n,g1,g1t,g2,g2t,s1,s1t,s2,s2t;
     BrawlerModelClass(){
     }
 
