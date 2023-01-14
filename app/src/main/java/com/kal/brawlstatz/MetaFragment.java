@@ -16,14 +16,12 @@ import android.view.ViewGroup;
 
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.appbar.MaterialToolbar;
-import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class MetaFragment extends Fragment {
     ArrayList<MetaModelClass> metalist = new ArrayList<>();
@@ -62,7 +60,8 @@ public class MetaFragment extends Fragment {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
 
                     MetaModelClass meta = ds.getValue(MetaModelClass.class);
-                    meta.bpro = "https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+meta.bname.toLowerCase()+"%2F"+String.valueOf(ds.getKey())+".webp?alt=media";
+                    assert meta != null;
+                    meta.bpro = "https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+meta.bname.toLowerCase()+"%2F"+ ds.getKey() +".webp?alt=media";
 
                     metalist.add(meta);
 

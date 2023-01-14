@@ -37,13 +37,13 @@ public class Meta_Adapter extends RecyclerView.Adapter<Meta_Adapter.ViewHolder> 
 
         holder.name.setText(t_element.bname);
 
-        Picasso.get().load(t_element.bpro).networkPolicy(NetworkPolicy.OFFLINE).into(holder.mpro, new Callback() {
+        Picasso.get().load(t_element.bpro).networkPolicy(NetworkPolicy.OFFLINE).placeholder(R.drawable.placeholder4).into(holder.mpro, new Callback() {
             @Override
             public void onSuccess() {}
 
             @Override
             public void onError(Exception e) {
-                Picasso.get().load(t_element.bpro).into(holder.mpro);
+                Picasso.get().load(t_element.bpro).placeholder(R.drawable.placeholder4).into(holder.mpro);
             }
         });
 
@@ -78,29 +78,22 @@ public class Meta_Adapter extends RecyclerView.Adapter<Meta_Adapter.ViewHolder> 
             if(t_element.tier.startsWith("0")) holder.tier.setText("S");
             else holder.tier.setText(String.valueOf(t_element.tier.charAt(0)));
         }
-        else holder.tier.setText("UnRanked");
+        else holder.tier.setText(R.string.unranked);
 
         switch (holder.tier.getText().toString()){
             case "S":holder.tier.setTextColor(Color.parseColor("#ff7e7e"));
-                //holder.card.setStrokeColor(Color.parseColor("#ff7e7e"));
                 break;
             case "A":holder.tier.setTextColor(Color.parseColor("#ffbf7f"));
-               // holder.card.setStrokeColor(Color.parseColor("#ffbf7f"));
                 break;
             case "B":holder.tier.setTextColor(Color.parseColor("#ffde7f"));
-              //  holder.card.setStrokeColor(Color.parseColor("#ffde7f"));
                 break;
             case "C":holder.tier.setTextColor(Color.parseColor("#feff7f"));
-              //  holder.card.setStrokeColor(Color.parseColor("#feff7f"));
                 break;
             case "D":holder.tier.setTextColor(Color.parseColor("#beff7d"));
-              //  holder.card.setStrokeColor(Color.parseColor("#beff7d"));
                 break;
             case "F":holder.tier.setTextColor(Color.parseColor("#7eff80"));
-               // holder.card.setStrokeColor(Color.parseColor("#7eff80"));
                 break;
             default: holder.tier.setTextColor(Color.parseColor("#000000"));
-              //  holder.card.setStrokeColor(Color.parseColor("#000000"));
         }
         holder.rank.setText(String.valueOf(position+1));
     }
