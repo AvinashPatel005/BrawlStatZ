@@ -81,6 +81,7 @@ public class Brawler_Adapter extends RecyclerView.Adapter<Brawler_Adapter.ViewHo
         });
 
 
+
 //        holder.bpro.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
