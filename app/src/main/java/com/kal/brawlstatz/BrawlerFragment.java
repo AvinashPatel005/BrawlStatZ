@@ -229,7 +229,7 @@ public class BrawlerFragment extends Fragment {
                     if(brawler.c3n!=null) brawler.c3 = "https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F" + brawler.c3n.toLowerCase() + "%2F" + brawler.c3n.charAt(0) + brawler.c3n.substring(1).toLowerCase() + ".webp?alt=media";
                     list.add(brawler);
                 }
-                brawlerAdapter = new Brawler_Adapter(list);
+                brawlerAdapter = new Brawler_Adapter(list,getActivity());
                 back_up = new ArrayList<>(list);
 
                 recyclerView.setAdapter(brawlerAdapter);

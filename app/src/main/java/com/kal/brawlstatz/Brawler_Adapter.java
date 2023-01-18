@@ -1,6 +1,8 @@
 package com.kal.brawlstatz;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,14 +20,15 @@ import java.util.ArrayList;
 
 public class Brawler_Adapter extends RecyclerView.Adapter<Brawler_Adapter.ViewHolder> {
     ArrayList<BrawlerModelClass> list;
-
+    Activity activity;
     // for Expandable cards.
     int mExpandedPosition = -1;
     int previousExpandedPosition = -1;
 
     //getting list from BrawlerFragment
-    public Brawler_Adapter(ArrayList<BrawlerModelClass> list) {
+    public Brawler_Adapter(ArrayList<BrawlerModelClass> list, Activity a) {
         this.list = list;
+        this.activity=a;
     }
 
     @NonNull
@@ -48,6 +51,46 @@ public class Brawler_Adapter extends RecyclerView.Adapter<Brawler_Adapter.ViewHo
         holder.c2n.setText(temp_List.c2n);
         holder.c3n.setText(temp_List.c3n);
 
+        holder.battack.setText(temp_List.battack);
+        holder.bsuper.setText(temp_List.bsuper);
+
+        if(temp_List.battack.length()>18) holder.battack.setTextSize(9);
+        else holder.battack.setTextSize(14);
+        if(temp_List.bsuper.length()>18) holder.bsuper.setTextSize(9);
+        else holder.bsuper.setTextSize(14);
+
+        holder.ab.setOnClickListener(v -> {
+            holder.helper.setText(temp_List.battackt);
+            holder.helper.setVisibility(View.VISIBLE);
+           holder.atkb.setVisibility(View.VISIBLE);
+           holder.supb.setVisibility(View.INVISIBLE);
+            holder.a1.setVisibility(View.INVISIBLE);
+            holder.a2.setVisibility(View.INVISIBLE);
+            holder.a3.setVisibility(View.INVISIBLE);
+            holder.a4.setVisibility(View.INVISIBLE);
+        });
+        holder.sb.setOnClickListener(v -> {
+            holder.helper.setText(temp_List.bsupert);
+            holder.helper.setVisibility(View.VISIBLE);
+            holder.supb.setVisibility(View.VISIBLE);
+            holder.atkb.setVisibility(View.INVISIBLE);
+            holder.a1.setVisibility(View.INVISIBLE);
+            holder.a2.setVisibility(View.INVISIBLE);
+            holder.a3.setVisibility(View.INVISIBLE);
+            holder.a4.setVisibility(View.INVISIBLE);
+        });
+
+
+//        holder.bpro.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent n = new Intent(activity,Brawler_Activity.class);
+//                n.putExtra("list",list);
+//                n.putExtra("position",position);
+//                activity.startActivity(n);
+//            }
+//        });
+
         Picasso.get().load(temp_List.bpro).placeholder(R.drawable.placeholder1).networkPolicy(NetworkPolicy.OFFLINE).into(holder.bpro, new Callback() {
             @Override
             public void onSuccess() {}
@@ -55,16 +98,6 @@ public class Brawler_Adapter extends RecyclerView.Adapter<Brawler_Adapter.ViewHo
             @Override
             public void onError(Exception e) {
                 Picasso.get().load(temp_List.bpro).placeholder(R.drawable.placeholder1).into(holder.bpro);
-            }
-        });
-
-        Picasso.get().load(temp_List.bmodel).networkPolicy(NetworkPolicy.OFFLINE).into(holder.bmodel, new Callback() {
-            @Override
-            public void onSuccess() {}
-
-            @Override
-            public void onError(Exception e) {
-                Picasso.get().load(temp_List.bmodel).into(holder.bmodel);
             }
         });
 
@@ -174,10 +207,47 @@ public class Brawler_Adapter extends RecyclerView.Adapter<Brawler_Adapter.ViewHo
         }
 
         //click event on gadgets and star power.
-        holder.g1.setOnClickListener(view -> holder.helper.setText(temp_List.g1t));
-        holder.g2.setOnClickListener(view -> holder.helper.setText(temp_List.g2t));
-        holder.s1.setOnClickListener(view -> holder.helper.setText(temp_List.s1t));
-        holder.s2.setOnClickListener(view -> holder.helper.setText(temp_List.s2t));
+        holder.g1.setOnClickListener(v -> {
+            holder.helper.setText(temp_List.g1t);
+            holder.helper.setVisibility(View.VISIBLE);
+            holder.a1.setVisibility(View.VISIBLE);
+            holder.a2.setVisibility(View.INVISIBLE);
+            holder.a3.setVisibility(View.INVISIBLE);
+            holder.a4.setVisibility(View.INVISIBLE);
+            holder.atkb.setVisibility(View.INVISIBLE);
+            holder.supb.setVisibility(View.INVISIBLE);
+        });
+        holder.g2.setOnClickListener(v -> {
+            holder.helper.setText(temp_List.g2t);
+            holder.helper.setVisibility(View.VISIBLE);
+            holder.a1.setVisibility(View.INVISIBLE);
+            holder.a2.setVisibility(View.VISIBLE);
+            holder.a3.setVisibility(View.INVISIBLE);
+            holder.a4.setVisibility(View.INVISIBLE);
+            holder.atkb.setVisibility(View.INVISIBLE);
+            holder.supb.setVisibility(View.INVISIBLE);
+        });
+        holder.s1.setOnClickListener(v -> {
+            holder.helper.setText(temp_List.s1t);
+            holder.helper.setVisibility(View.VISIBLE);
+            holder.a1.setVisibility(View.INVISIBLE);
+            holder.a2.setVisibility(View.INVISIBLE);
+            holder.a3.setVisibility(View.VISIBLE);
+            holder.a4.setVisibility(View.INVISIBLE);
+            holder.atkb.setVisibility(View.INVISIBLE);
+            holder.supb.setVisibility(View.INVISIBLE);
+        });
+        holder.s2.setOnClickListener(v -> {
+            holder.helper.setText(temp_List.s2t);
+            holder.helper.setVisibility(View.VISIBLE);
+            holder.a1.setVisibility(View.INVISIBLE);
+            holder.a2.setVisibility(View.INVISIBLE);
+            holder.a3.setVisibility(View.INVISIBLE);
+            holder.a4.setVisibility(View.VISIBLE);
+            holder.atkb.setVisibility(View.INVISIBLE);
+            holder.supb.setVisibility(View.INVISIBLE);
+        });
+
 
         //Expandable card
         final boolean isExpanded = position == mExpandedPosition;
@@ -189,6 +259,15 @@ public class Brawler_Adapter extends RecyclerView.Adapter<Brawler_Adapter.ViewHo
             holder.c2n.setVisibility(View.VISIBLE);
             holder.c3n.setVisibility(View.VISIBLE);
 
+            holder.atkb.setVisibility(View.INVISIBLE);
+            holder.supb.setVisibility(View.INVISIBLE);
+
+            holder.a1.setVisibility(View.INVISIBLE);
+            holder.a2.setVisibility(View.INVISIBLE);
+            holder.a3.setVisibility(View.INVISIBLE);
+            holder.a4.setVisibility(View.INVISIBLE);
+
+            holder.helper.setVisibility(View.INVISIBLE);
             holder.bpro.getLayoutParams().width = 300;
             holder.bpro.getLayoutParams().height = 300;
 
@@ -228,12 +307,12 @@ public class Brawler_Adapter extends RecyclerView.Adapter<Brawler_Adapter.ViewHo
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView bname, brare, c1n, c2n, c3n, babout, helper;
-        public ImageView bpro, c1, c2, c3, bmodel, g1, g2, s1, s2;
+        public TextView bname, brare, c1n, c2n, c3n, babout, helper,battack,bsuper;
+        public ImageView bpro, c1, c2, c3, g1, g2, s1, s2;
 
         public MaterialCardView cardView, bpcard;
 
-        public ImageView downA, upA;
+        public ImageView downA, upA,a1,a2,a3,a4,atkb,supb,ab,sb;
         public ConstraintLayout hidden;
 
         public ViewHolder(@NonNull View itemView) {
@@ -242,7 +321,6 @@ public class Brawler_Adapter extends RecyclerView.Adapter<Brawler_Adapter.ViewHo
             bpro = itemView.findViewById(R.id.bpro);
             bname = itemView.findViewById(R.id.bname);
             brare = itemView.findViewById(R.id.brare);
-            bmodel = itemView.findViewById(R.id.bmodel);
             babout = itemView.findViewById(R.id.babout);
             c1 = itemView.findViewById(R.id.c1);
             c2 = itemView.findViewById(R.id.c2);
@@ -263,6 +341,19 @@ public class Brawler_Adapter extends RecyclerView.Adapter<Brawler_Adapter.ViewHo
             upA = itemView.findViewById(R.id.upA);
             bpcard = itemView.findViewById(R.id.bpro_card);
 
+            a1=itemView.findViewById(R.id.a1);
+            a2=itemView.findViewById(R.id.a2);
+            a3=itemView.findViewById(R.id.a3);
+            a4=itemView.findViewById(R.id.a4);
+
+            battack=itemView.findViewById(R.id.attack);
+            bsuper=itemView.findViewById(R.id.attack_super);
+
+            atkb = itemView.findViewById(R.id.atkb);
+            supb=itemView.findViewById(R.id.supb);
+
+            ab = itemView.findViewById(R.id.attackback);
+            sb=itemView.findViewById(R.id.superback);
         }
     }
 }
