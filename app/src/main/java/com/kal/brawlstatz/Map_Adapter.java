@@ -133,7 +133,6 @@ public class Map_Adapter extends RecyclerView.Adapter<Map_Adapter.ViewHolder> {
             type = itemView.findViewById(R.id.mtype);
             typecol = itemView.findViewById(R.id.typecol);
             mhide = itemView.findViewById(R.id.mhide);
-            mabout = itemView.findViewById(R.id.mabout);
 
 
         }
