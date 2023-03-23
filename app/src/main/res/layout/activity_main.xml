@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <androidx.viewpager2.widget.ViewPager2
+
         android:id="@+id/viewpager"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -16,7 +17,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-    </androidx.viewpager2.widget.ViewPager2>
+    </androidx.viewpager2.widget.ViewPager2
+        >
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
@@ -45,6 +47,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/meta" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="STATS" />
+
     </com.google.android.material.tabs.TabLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,11 +15,12 @@ public class vpAdapter extends FragmentStateAdapter {
         switch (position){
             case 1:return new mapFragment();
             case 2:return new MetaFragment();
+            case 3:return  new statsFragment();
             default:return new BrawlerFragment();
         }
     }
     @Override
     public int getItemCount() {
-        return 3;
+        return 4;
     }
 }

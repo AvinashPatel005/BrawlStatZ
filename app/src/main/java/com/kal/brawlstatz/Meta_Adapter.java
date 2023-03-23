@@ -75,7 +75,7 @@ public class Meta_Adapter extends RecyclerView.Adapter<Meta_Adapter.ViewHolder> 
         }
 
         if(t_element.tier!=null) {
-            if(t_element.tier.startsWith("0")) holder.tier.setText("S");
+            if(t_element.tier.charAt(0)>='0'&&t_element.tier.charAt(0)<='9') holder.tier.setText("S");
             else holder.tier.setText(String.valueOf(t_element.tier.charAt(0)));
         }
         else holder.tier.setText(R.string.unranked);
