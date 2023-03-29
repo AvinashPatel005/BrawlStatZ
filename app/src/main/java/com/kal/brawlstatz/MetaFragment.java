@@ -62,7 +62,9 @@ public class MetaFragment extends Fragment {
                     MetaModelClass meta = ds.getValue(MetaModelClass.class);
                     assert meta != null;
                     meta.bpro = "https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F"+meta.bname.toLowerCase()+"%2F"+ ds.getKey() +".webp?alt=media";
-
+                    meta.bgear1 ="https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/gears%2F"+meta.bgear1.toLowerCase()+".webp?alt=media";
+                    meta.bgear2 ="https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/gears%2F"+meta.bgear2.toLowerCase()+".webp?alt=media";
+                    if(meta.bgear3!=null) meta.bgear3 ="https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/gears%2F"+meta.bgear3.toLowerCase()+".webp?alt=media";
                     metalist.add(meta);
 
                 }

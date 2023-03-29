@@ -84,7 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             android:shadowColor="#000000"
             android:shadowDx="3"
             android:shadowDy="3"
@@ -153,24 +153,54 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView14"
+            android:id="@+id/bstar"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginStart="8dp"
-            android:layout_marginBottom="6dp"
+            android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/materialCardView2"
-            app:srcCompat="@drawable/s1" />
+            app:srcCompat="@drawable/sd" />
 
         <ImageView
-            android:id="@+id/imageView13"
+            android:id="@+id/bgad"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginStart="2dp"
-            android:layout_marginBottom="6dp"
+            android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView14"
-            app:srcCompat="@drawable/g2" />
+            app:layout_constraintStart_toEndOf="@+id/bstar"
+            app:srcCompat="@drawable/gd" />
+
+        <ImageView
+            android:id="@+id/bg2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/bg1"
+            app:srcCompat="@drawable/sg" />
+
+        <ImageView
+            android:id="@+id/bg3"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/bg2"
+            app:srcCompat="@drawable/sg" />
+
+        <ImageView
+            android:id="@+id/bg1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/bgad"
+            app:srcCompat="@drawable/sg" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>
