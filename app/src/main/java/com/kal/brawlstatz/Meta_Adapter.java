@@ -1,6 +1,9 @@
 package com.kal.brawlstatz;
 
+import static android.content.ContentValues.TAG;
+
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -75,7 +78,7 @@ public class Meta_Adapter extends RecyclerView.Adapter<Meta_Adapter.ViewHolder> 
         }
 
         if(t_element.tier!=null) {
-            if(t_element.tier.startsWith("0")) holder.tier.setText("S");
+            if(t_element.tier.charAt(0)>='0'&&t_element.tier.charAt(0)<='9') holder.tier.setText("S");
             else holder.tier.setText(String.valueOf(t_element.tier.charAt(0)));
         }
         else holder.tier.setText(R.string.unranked);
@@ -95,7 +98,61 @@ public class Meta_Adapter extends RecyclerView.Adapter<Meta_Adapter.ViewHolder> 
                 break;
             default: holder.tier.setTextColor(Color.parseColor("#000000"));
         }
+
         holder.rank.setText(String.valueOf(position+1));
+        if(t_element.bstarpower !=null) {
+            Log.d(TAG, t_element.bstarpower);
+            switch (t_element.bstarpower) {
+                case "1":
+                    Picasso.get().load(R.drawable.s1).into(holder.bstar);
+                    break;
+                case "2":
+                    Picasso.get().load(R.drawable.s2).into(holder.bstar);
+                    break;
+            }
+        }
+
+        if(t_element.bstarpower !=null) {
+            Log.d(TAG, t_element.bgadget);
+            switch (t_element.bgadget) {
+                case "1":
+                    Picasso.get().load(R.drawable.g1).into(holder.bgad);
+                    break;
+                case "2":
+                    Picasso.get().load(R.drawable.g2).into(holder.bgad);
+                    break;
+            }
+        }
+
+
+        Picasso.get().load(t_element.bgear1).networkPolicy(NetworkPolicy.OFFLINE).into(holder.bg1, new Callback() {
+            @Override
+            public void onSuccess() {}
+
+            @Override
+            public void onError(Exception e) {
+                Picasso.get().load(t_element.bgear1).into(holder.bg1);
+            }
+        });
+        Picasso.get().load(t_element.bgear2).networkPolicy(NetworkPolicy.OFFLINE).into(holder.bg2, new Callback() {
+            @Override
+            public void onSuccess() {}
+
+            @Override
+            public void onError(Exception e) {
+                Picasso.get().load(t_element.bgear2).into(holder.bg2);
+            }
+        });
+        Picasso.get().load(t_element.bgear3).networkPolicy(NetworkPolicy.OFFLINE).into(holder.bg3, new Callback() {
+            @Override
+            public void onSuccess() {}
+
+            @Override
+            public void onError(Exception e) {
+                Picasso.get().load(t_element.bgear3).into(holder.bg3);
+            }
+        });
+
     }
 
     @Override
@@ -105,7 +162,7 @@ public class Meta_Adapter extends RecyclerView.Adapter<Meta_Adapter.ViewHolder> 
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         TextView name,tier,rank,mrare;
-        ImageView mpro;
+        ImageView mpro,bstar,bgad,bg1,bg2,bg3;
         MaterialCardView card;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -115,6 +172,11 @@ public class Meta_Adapter extends RecyclerView.Adapter<Meta_Adapter.ViewHolder> 
             tier = itemView.findViewById(R.id.tier);
             rank = itemView.findViewById(R.id.rank);
             mrare = itemView.findViewById(R.id.mrare);
+            bstar = itemView.findViewById(R.id.bstar);
+            bgad = itemView.findViewById(R.id.bgad);
+            bg1 = itemView.findViewById(R.id.bg1);
+            bg2 = itemView.findViewById(R.id.bg2);
+            bg3 = itemView.findViewById(R.id.bg3);
         }
     }
 }

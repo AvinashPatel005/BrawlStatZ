@@ -31,9 +31,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager2.setCurrentItem(tab.getPosition());
+                if(tab.getPosition()==3) viewPager2.setUserInputEnabled(false);
             }
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
+                if(tab.getPosition()==3) viewPager2.setUserInputEnabled(true);
             }
             @Override
             public void onTabReselected(TabLayout.Tab tab) {

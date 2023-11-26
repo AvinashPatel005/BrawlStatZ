@@ -42,7 +42,7 @@ public class mapFragment extends Fragment {
 
         shimmerFlmap = view.findViewById(R.id.mapshimmer);
 
-        FirebaseDatabase.getInstance().getReference().child("maps").orderByChild("mtype").addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference().child("maps").orderByChild("mname").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 // adding data to Arraylist

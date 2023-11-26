@@ -231,6 +231,8 @@ public class BrawlerFragment extends Fragment {
                     if(brawler.c1n!=null) brawler.c1 = "https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F" + brawler.c1n.toLowerCase() + "%2F" + brawler.c1n.charAt(0) + brawler.c1n.substring(1).toLowerCase() + ".webp?alt=media";
                     if(brawler.c2n!=null) brawler.c2 = "https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F" + brawler.c2n.toLowerCase() + "%2F" + brawler.c2n.charAt(0) + brawler.c2n.substring(1).toLowerCase() + ".webp?alt=media";
                     if(brawler.c3n!=null) brawler.c3 = "https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/brawlers%2F" + brawler.c3n.toLowerCase() + "%2F" + brawler.c3n.charAt(0) + brawler.c3n.substring(1).toLowerCase() + ".webp?alt=media";
+                    if(brawler.trait!=null) brawler.trait="https://firebasestorage.googleapis.com/v0/b/brawlstatz.appspot.com/o/traits%2F"+brawler.trait+".png?alt=media";
+                    else brawler.trait="null";
                     list.add(brawler);
                 }
                 brawlerAdapter = new Brawler_Adapter(list,getActivity());

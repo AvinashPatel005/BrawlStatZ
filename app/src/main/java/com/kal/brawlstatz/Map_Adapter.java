@@ -58,8 +58,6 @@ public class Map_Adapter extends RecyclerView.Adapter<Map_Adapter.ViewHolder> {
                 Picasso.get().load(temp_mList.mthumb).into(holder.thumb);
             }
         });
-        holder.mabout.setText(temp_mList.mabout);
-
         holder.name.setText(temp_mList.mname);
         holder.type.setText(temp_mList.mtype);
 
@@ -122,7 +120,7 @@ public class Map_Adapter extends RecyclerView.Adapter<Map_Adapter.ViewHolder> {
     public static class ViewHolder extends RecyclerView.ViewHolder {
         ConstraintLayout mhide;
         ImageView thumb , layout , mode_icon;
-        TextView name , type,mabout;
+        TextView name , type;
         MaterialCardView typecol;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

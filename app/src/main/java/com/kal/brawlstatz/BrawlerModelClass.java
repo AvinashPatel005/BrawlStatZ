@@ -6,12 +6,12 @@ import java.io.Serializable;
 
 //model class for custom ArrayList.
 public class BrawlerModelClass implements Serializable {
-    String bname, brare, bpro, babout, bmodel, c1, c1n, c2, c2n, c3, c3n, g1, g1t, g2, g2t, s1, s1t, s2, s2t, battack, bsuper ,battackt, bsupert ;
+    String bname, brare, bpro, babout, bmodel, c1, c1n, c2, c2n, c3, c3n, g1, g1t, g2, g2t, s1, s1t, s2, s2t, battack, bsuper ,battackt, bsupert,trait ;
 
     BrawlerModelClass() {
     }
 
-    public BrawlerModelClass(String bname, String brare, String bpro, String babout, String bmodel, String c1, String c1n, String c2, String c2n, String c3, String c3n, String g1, String g1t, String g2, String g2t, String s1, String s1t, String s2, String s2t, String battack, String bsuper, String battackt, String bsupert) {
+    public BrawlerModelClass(String bname, String brare, String bpro, String babout, String bmodel, String c1, String c1n, String c2, String c2n, String c3, String c3n, String g1, String g1t, String g2, String g2t, String s1, String s1t, String s2, String s2t, String battack, String bsuper, String battackt, String bsupert, String trait) {
         this.bname = bname;
         this.brare = brare;
         this.bpro = bpro;
@@ -35,6 +35,7 @@ public class BrawlerModelClass implements Serializable {
         this.bsuper = bsuper;
         this.battackt = battackt;
         this.bsupert = bsupert;
+        this.trait = trait;
     }
 
     public String getBname() {
@@ -219,5 +220,13 @@ public class BrawlerModelClass implements Serializable {
 
     public void setBsupert(String bsupert) {
         this.bsupert = bsupert;
+    }
+
+    public String getTrait() {
+        return trait;
+    }
+
+    public void setTrait(String trait) {
+        this.trait = trait;
     }
 }

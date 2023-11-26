@@ -79,7 +79,15 @@ public class Brawler_Adapter extends RecyclerView.Adapter<Brawler_Adapter.ViewHo
             holder.a3.setVisibility(View.INVISIBLE);
             holder.a4.setVisibility(View.INVISIBLE);
         });
+        Picasso.get().load(temp_List.trait).networkPolicy(NetworkPolicy.OFFLINE).into(holder.trait, new Callback() {
+                @Override
+                public void onSuccess() {}
 
+                @Override
+                public void onError(Exception e) {
+                    Picasso.get().load(temp_List.trait).into(holder.trait);
+                }
+        });
 
 
 //        holder.bpro.setOnClickListener(new View.OnClickListener() {
@@ -313,7 +321,7 @@ public class Brawler_Adapter extends RecyclerView.Adapter<Brawler_Adapter.ViewHo
 
         public MaterialCardView cardView, bpcard;
 
-        public ImageView downA, upA,a1,a2,a3,a4,atkb,supb,ab,sb;
+        public ImageView downA, upA,a1,a2,a3,a4,atkb,supb,ab,sb,trait;
         public ConstraintLayout hidden;
 
         public ViewHolder(@NonNull View itemView) {
@@ -355,6 +363,8 @@ public class Brawler_Adapter extends RecyclerView.Adapter<Brawler_Adapter.ViewHo
 
             ab = itemView.findViewById(R.id.attackback);
             sb=itemView.findViewById(R.id.superback);
+
+            trait=itemView.findViewById(R.id.trait);
         }
     }
 }
