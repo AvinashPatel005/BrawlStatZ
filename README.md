@@ -1,2 +1,3 @@
-# Android
-I Love Making Android Apps
+#BrawlStatz
+This is a Companion app for GAME BRAWLSTATS
+v1
