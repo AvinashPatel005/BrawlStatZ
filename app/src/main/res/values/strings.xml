@@ -23,4 +23,5 @@
     <string name="starting">Starting</string>
     <string name="recache">ReCache</string>
     <string name="unranked">N</string>
+    <string name="dev">Dev</string>
 </resources>

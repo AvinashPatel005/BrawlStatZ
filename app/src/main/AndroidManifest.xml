@@ -13,6 +13,9 @@
         android:theme="@style/Theme.App.Starting"
         tools:targetApi="31">
         <activity
+            android:name=".devActivity"
+            android:exported="false" />
+        <activity
             android:name=".Brawler_Activity"
             android:exported="false" />
         <activity

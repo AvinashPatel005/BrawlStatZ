@@ -205,6 +205,10 @@ public class BrawlerFragment extends Fragment {
                 deleteDirectoryTree(requireActivity().getCacheDir());
                 Toast.makeText(getContext(), "Database Refreshed", Toast.LENGTH_SHORT).show();
                 break;
+
+            case R.id.dev:
+                Intent intent = new Intent(getActivity(),devActivity.class);
+                startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }

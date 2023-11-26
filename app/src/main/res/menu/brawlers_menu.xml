@@ -56,6 +56,9 @@
     <item
         android:id="@+id/refresh"
         android:title="@string/recache" />
+    <item
+        android:title="@string/dev"
+        android:id="@+id/dev" />
 
 
 </menu>
